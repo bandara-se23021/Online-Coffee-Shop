@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">project239</string>
+    <string name="choice_your_nfavourite_coffe">Choice your\nFavourite Coffe</string>
+    <string name="choice_your_nfavourite_coffee">Choice your\nFavourite Coffee</string>
+    <string name="get_started">Get Started</string>
+    <string name="search_anything">Search anything...</string>
+    <string name="see_all">See all</string>
+    <string name="popular_coffees">Popular Coffees</string>
+    <string name="category">Category</string>
+    <string name="tina_anderson">Tina Anderson</string>
+    <string name="profile">Profile</string>
+    <string name="my_order">My Order</string>
+    <string name="wishlist">Wishlist</string>
+    <string name="cart">Cart</string>
+    <string name="explorer">Explorer</string>
+    <string name="title">title</string>
+</resources>
