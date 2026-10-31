@@ -14,4 +14,5 @@
     <string name="cart">Cart</string>
     <string name="explorer">Explorer</string>
     <string name="title">title</string>
+    <string name="subtitle">subtitle</string>
 </resources>

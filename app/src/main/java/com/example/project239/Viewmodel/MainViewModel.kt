@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.example.project239.domain.BannerModel
 import com.example.project239.domain.CategoryModel
+import com.example.project239.domain.ItemsModel
 import com.example.project239.repository.MainRepository
 
 class MainViewModel : ViewModel() {
@@ -16,5 +17,9 @@ class MainViewModel : ViewModel() {
 
     fun loadCategory(): LiveData<MutableList<CategoryModel>> {
         return repository.loadCategory()
+    }
+
+    fun loadPopular(): LiveData<MutableList<ItemsModel>> {
+        return repository.loadPopular()
     }
 }

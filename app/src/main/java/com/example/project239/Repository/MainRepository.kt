@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.project239.domain.BannerModel
 import com.example.project239.domain.CategoryModel
+import com.example.project239.domain.ItemsModel
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -46,19 +47,54 @@ class MainRepository {
                 }
                 if (list.isEmpty()) {
                     list.addAll(defaultCategories())
-                } else {
-                    val defaults = defaultCategories()
-                    for (defaultCat in defaults) {
-                        if (list.none { it.title.equals(defaultCat.title, ignoreCase = true) }) {
-                            list.add(defaultCat)
-                        }
-                    }
                 }
                 listData.value = list
             }
 
             override fun onCancelled(error: DatabaseError) {
                 listData.value = defaultCategories()
+            }
+        })
+        return listData
+    }
+
+    fun loadPopular(): LiveData<MutableList<ItemsModel>> {
+        val listData = MutableLiveData<MutableList<ItemsModel>>()
+        val ref = firebaseDatabase.getReference("Items")
+        ref.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val list = mutableListOf<ItemsModel>()
+                for (childSnapshot in snapshot.children) {
+                    val item = childSnapshot.getValue(ItemsModel::class.java)
+                    item?.let { list.add(it) }
+                }
+                if (list.isEmpty()) {
+                    val refPopular = firebaseDatabase.getReference("Popular")
+                    refPopular.addListenerForSingleValueEvent(object : ValueEventListener {
+                        override fun onDataChange(popSnapshot: DataSnapshot) {
+                            val popList = mutableListOf<ItemsModel>()
+                            for (c in popSnapshot.children) {
+                                val item = c.getValue(ItemsModel::class.java)
+                                item?.let { popList.add(it) }
+                            }
+                            if (popList.isEmpty()) {
+                                listData.value = defaultPopular()
+                            } else {
+                                listData.value = popList
+                            }
+                        }
+
+                        override fun onCancelled(error: DatabaseError) {
+                            listData.value = defaultPopular()
+                        }
+                    })
+                } else {
+                    listData.value = list
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                listData.value = defaultPopular()
             }
         })
         return listData
@@ -71,6 +107,47 @@ class MainRepository {
             CategoryModel(3, "Latte"),
             CategoryModel(4, "Americano"),
             CategoryModel(5, "Hot Chocolate")
+        )
+    }
+
+    private fun defaultPopular(): MutableList<ItemsModel> {
+        return mutableListOf(
+            ItemsModel(
+                title = "Cappuccino",
+                description = "Cappuccino is an Italian coffee drink that is traditionally prepared with equal parts double espresso, steamed milk, and steamed milk foam on top.",
+                picUrl = arrayListOf("pop_2"),
+                price = 4.5,
+                rating = 4.8,
+                numberInCart = 0,
+                extra = "Espresso,Milk"
+            ),
+            ItemsModel(
+                title = "Espresso",
+                description = "Espresso is a concentrated form of coffee served in small, strong shots.",
+                picUrl = arrayListOf("pop_5"),
+                price = 3.5,
+                rating = 4.9,
+                numberInCart = 0,
+                extra = "Espresso"
+            ),
+            ItemsModel(
+                title = "Affagato",
+                description = "An affogato is an Italian coffee-based dessert.",
+                picUrl = arrayListOf("pop_3"),
+                price = 8.0,
+                rating = 4.7,
+                numberInCart = 0,
+                extra = "Espresso,milk,IceCream"
+            ),
+            ItemsModel(
+                title = "Americano",
+                description = "An Americano is an espresso drink made with hot water and espresso.",
+                picUrl = arrayListOf("pop_4"),
+                price = 5.5,
+                rating = 4.6,
+                numberInCart = 0,
+                extra = "Espresso,milk"
+            )
         )
     }
 }

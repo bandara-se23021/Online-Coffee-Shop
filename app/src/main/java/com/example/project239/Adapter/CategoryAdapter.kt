@@ -14,7 +14,7 @@ class CategoryAdapter(
 ) : RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
 
     private lateinit var context: Context
-    private var selectedPosition = 0
+    private var selectedPosition = -1
     private var lastSelectedPosition = -1
 
     inner class ViewHolder(
