@@ -28,7 +28,7 @@ class MainRepository {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
+                listData.value = mutableListOf()
             }
         })
         return listData
@@ -44,15 +44,33 @@ class MainRepository {
                     val item = childSnapshot.getValue(CategoryModel::class.java)
                     item?.let { list.add(it) }
                 }
+                if (list.isEmpty()) {
+                    list.addAll(defaultCategories())
+                } else {
+                    val defaults = defaultCategories()
+                    for (defaultCat in defaults) {
+                        if (list.none { it.title.equals(defaultCat.title, ignoreCase = true) }) {
+                            list.add(defaultCat)
+                        }
+                    }
+                }
                 listData.value = list
             }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
+                listData.value = defaultCategories()
             }
         })
         return listData
     }
+
+    private fun defaultCategories(): MutableList<CategoryModel> {
+        return mutableListOf(
+            CategoryModel(1, "Esspersso"),
+            CategoryModel(2, "Cappuccino"),
+            CategoryModel(3, "Latte"),
+            CategoryModel(4, "Americano"),
+            CategoryModel(5, "Hot Chocolate")
+        )
+    }
 }
-
-

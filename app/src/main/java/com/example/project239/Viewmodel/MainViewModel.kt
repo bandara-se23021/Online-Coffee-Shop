@@ -10,8 +10,6 @@ class MainViewModel : ViewModel() {
 
     private val repository = MainRepository()
 
-
-
     fun loadBanner(): LiveData<MutableList<BannerModel>> {
         return repository.loadBanner()
     }
@@ -19,6 +17,4 @@ class MainViewModel : ViewModel() {
     fun loadCategory(): LiveData<MutableList<CategoryModel>> {
         return repository.loadCategory()
     }
-
-
 }
