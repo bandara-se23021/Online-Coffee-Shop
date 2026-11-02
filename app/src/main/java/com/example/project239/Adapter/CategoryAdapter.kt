@@ -1,13 +1,20 @@
 package com.example.project239.adapter
 
+
 import android.content.Context
+import android.content.Intent
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.example.project239.activity.ItemsListActivity
 import com.example.project239.domain.CategoryModel
 import com.example.project239.R
 import com.example.project239.databinding.ViewholderCategoryBinding
+
+
 
 class CategoryAdapter(
     val items: MutableList<CategoryModel>
@@ -35,22 +42,26 @@ class CategoryAdapter(
     }
 
     override fun onBindViewHolder(
-        holder: ViewHolder,
-        position: Int
+        holder: CategoryAdapter.ViewHolder,
+         position: Int
     ) {
         val item = items[position]
         holder.binding.titleCat.text = item.title
 
         holder.binding.root.setOnClickListener {
-            val currentPosition = holder.bindingAdapterPosition
-            if (currentPosition != RecyclerView.NO_POSITION && selectedPosition != currentPosition) {
-                lastSelectedPosition = selectedPosition
-                selectedPosition = currentPosition
-                if (lastSelectedPosition != -1) {
-                    notifyItemChanged(lastSelectedPosition)
+            lastSelectedPosition = selectedPosition
+            selectedPosition = position
+            notifyItemChanged(lastSelectedPosition)
+            notifyItemChanged(selectedPosition)
+
+            Handler(Looper.getMainLooper()).postDelayed({
+                val intent = Intent(context, ItemsListActivity::class.java).apply {
+                    putExtra("id", item.id.toString())
+                    putExtra("title", item.title)
                 }
-                notifyItemChanged(selectedPosition)
-            }
+                ContextCompat.startActivity(context, intent, null)
+            }, 500)
+
         }
 
         if (selectedPosition == position) {
