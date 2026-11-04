@@ -28,38 +28,38 @@
   ],
   "Popular": [
     {
-      "description": "Cappuccino is a traditional Italian coffee drink made with equal parts espresso, steamed milk, and milk foam. It has a strong espresso flavor, balanced by the creamy texture of the steamed milk and the light, airy foam on top. Cappuccinos are often garnished with a sprinkle of cocoa powder or cinnamon.",
-      "extra": "Essperso,Milk",
+      "description": "Cappuccino is a traditional Italian coffee drink made with equal parts espresso, steamed milk, and milk foam. It has a strong espresso flavor, balanced by the creamy texture of the steamed milk and the light, airy foam on top.",
+      "extra": "Espresso,Milk",
       "picUrl": [
         "https://res.cloudinary.com/dkikc5ywq/image/upload/v1748598189/4_vcxvtv.png"
       ],
       "price": 4.5,
       "rating": 4.6,
-      "title": "Cappoccino"
+      "title": "Cappuccino"
     },
     {
-      "description": "Espresso is a concentrated form of coffee served in small, strong shots and is the base for many coffee drinks. It is made by forcing a small amount of nearly boiling water through finely-ground coffee beans under high pressure. The result is a rich, robust flavor with a thick, creamy layer on top called crema.",
-      "extra": "Espersso",
+      "description": "Espresso is a concentrated form of coffee served in small, strong shots and is the base for many coffee drinks. It is made by forcing a small amount of nearly boiling water through finely-ground coffee beans under high pressure.",
+      "extra": "Espresso",
       "picUrl": [
         "https://res.cloudinary.com/dkikc5ywq/image/upload/v1748598194/5_gdnijm.png"
       ],
       "price": 3.5,
-      "rating": 4,
-      "title": "Espersso"
+      "rating": 4.0,
+      "title": "Espresso"
     },
     {
-      "description": "Espresso is a concentrated form of coffee served in small,strongshots and is the base for many coffee drinks. It is made by forcing a small amount of nearly boiling water through finely-ground coffee beans under high pressure.The result is a rich, robust flavor with a thick, creamy layer on top called crema",
-      "extra": "Espersso,milk,IceCream",
+      "description": "An affogato is an Italian coffee-based dessert consisting of a shot of hot espresso poured over vanilla gelato or ice cream.",
+      "extra": "Espresso,milk,IceCream",
       "picUrl": [
         "https://res.cloudinary.com/dkikc5ywq/image/upload/v1748598184/3_o0g3jz.png"
       ],
-      "price": 8,
-      "rating": 4.1,
-      "title": "Affagato"
+      "price": 8.0,
+      "rating": 4.7,
+      "title": "Affogato"
     },
     {
-      "description": "Espresso is a concentrated form of coffee served in small,strongshots and is the base for many coffee drinks. It is made by forcing a small amount of nearly boiling water through finely-ground coffee beans under high pressure.The result is a rich, robust flavor with a thick, creamy layer on top called crema",
-      "extra": "Espersso, milk",
+      "description": "An Americano is an espresso drink made with hot water and espresso, giving it a similar strength to brewed coffee but a different flavor profile.",
+      "extra": "Espresso, milk",
       "picUrl": [
         "https://res.cloudinary.com/dkikc5ywq/image/upload/v1748598188/6_syir34.png"
       ],
@@ -71,30 +71,74 @@
   "Items": [
     {
       "categoryId": "0",
-      "description": "Espresso is a concentrated form of coffee served in small, strong shots and is the base for many coffee drinks. It is made by forcing a small amount of nearly boiling water through finely-ground coffee beans under high pressure. The result is a rich, robust flavor with a thick, creamy layer on top called crema.",
-      "extra": "Espersso",
+      "description": "Espresso is a concentrated form of coffee served in small, strong shots and is the base for many coffee drinks.",
+      "extra": "Espresso",
       "picUrl": [
         "https://res.cloudinary.com/dkikc5ywq/image/upload/v1748598194/5_gdnijm.png"
       ],
       "price": 3.5,
-      "rating": 4,
-      "title": "Espersso"
+      "rating": 4.9,
+      "title": "Espresso"
     },
     {
       "categoryId": "0",
-      "description": "Espresso is a concentrated form of coffee served in small, strong shots and is the base for many coffee drinks. It is made by forcing a small amount of nearly boiling water through finely-ground coffee beans under high pressure. The result is a rich, robust flavor with a thick, creamy layer on top called crema.",
-      "extra": "Espersso",
+      "description": "A lighter espresso shot with a smoother finish and delicate crema.",
+      "extra": "Espresso",
       "picUrl": [
         "https://res.cloudinary.com/dkikc5ywq/image/upload/v1748598194/7_hpl7t1.png"
       ],
       "price": 3.5,
-      "rating": 4,
-      "title": "Light Espersso"
+      "rating": 4.5,
+      "title": "Light Espresso"
+    },
+    {
+      "categoryId": "0",
+      "description": "Double shot of rich concentrated espresso for an intense flavor boost.",
+      "extra": "Double Espresso",
+      "picUrl": [
+        "https://res.cloudinary.com/dkikc5ywq/image/upload/v1748598194/5_gdnijm.png"
+      ],
+      "price": 4.2,
+      "rating": 4.8,
+      "title": "Double Espresso"
+    },
+    {
+      "categoryId": "0",
+      "description": "A short shot of espresso extracted with less water for a concentrated taste.",
+      "extra": "Short Espresso Shot",
+      "picUrl": [
+        "https://res.cloudinary.com/dkikc5ywq/image/upload/v1748598194/7_hpl7t1.png"
+      ],
+      "price": 3.8,
+      "rating": 4.7,
+      "title": "Espresso Ristretto"
+    },
+    {
+      "categoryId": "0",
+      "description": "Italian coffee-based dessert consisting of hot espresso poured over gelato.",
+      "extra": "Espresso, Milk, Ice Cream",
+      "picUrl": [
+        "https://res.cloudinary.com/dkikc5ywq/image/upload/v1748598184/3_o0g3jz.png"
+      ],
+      "price": 8.0,
+      "rating": 4.7,
+      "title": "Affogato"
     },
     {
       "categoryId": "1",
-      "description": "A seasonal favorite, this comforting latte combines the richness of espresso with the creamy sweetness of pumpkin spice, milk, and a touch of cinnamon. Perfect for autumn or any cozy moment.",
-      "extra": "Espresso, steamed milk, pumpkin spice syrup, cinnamon.",
+      "description": "Equal parts double espresso, steamed milk, and milk foam on top.",
+      "extra": "Espresso, Steamed Milk, Foam",
+      "picUrl": [
+        "https://res.cloudinary.com/dkikc5ywq/image/upload/v1748598189/4_vcxvtv.png"
+      ],
+      "price": 4.5,
+      "rating": 4.8,
+      "title": "Classic Cappuccino"
+    },
+    {
+      "categoryId": "1",
+      "description": "A seasonal favorite with pumpkin spice and steamed milk.",
+      "extra": "Espresso, Steamed Milk, Pumpkin Spice",
       "picUrl": [
         "https://res.cloudinary.com/dkikc5ywq/image/upload/v1748598183/2_iudehq.png"
       ],
@@ -104,8 +148,8 @@
     },
     {
       "categoryId": "1",
-      "description": "A bold espresso drink topped with a small amount of milk foam. Perfect for those who love the intensity of espresso but want a smoother finish.",
-      "extra": "Espresso, milk foam",
+      "description": "A bold espresso drink topped with a small amount of milk foam.",
+      "extra": "Espresso, Milk Foam",
       "picUrl": [
         "https://res.cloudinary.com/dkikc5ywq/image/upload/v1748598189/4_vcxvtv.png"
       ],
@@ -115,19 +159,19 @@
     },
     {
       "categoryId": "1",
-      "description": "A vibrant and healthy option, the Matcha Latte combines high-quality matcha green tea with steamed milk for a creamy and refreshing beverage, offering a unique twist on traditional lattes.",
-      "extra": "Matcha powder, steamed milk, a touch of sweetener (optional)",
+      "description": "Matcha green tea with steamed milk.",
+      "extra": "Matcha powder, Steamed Milk",
       "picUrl": [
         "https://res.cloudinary.com/dkikc5ywq/image/upload/v1748598184/3_o0g3jz.png"
       ],
-      "price": 5,
+      "price": 5.0,
       "rating": 4.6,
       "title": "Matcha Latte"
     },
     {
       "categoryId": "1",
-      "description": "A balanced blend of espresso and warm milk, the cortado delivers a smooth coffee experience with just the right level of intensity. A great pick for coffee lovers who prefer a little less milk.",
-      "extra": "Espresso, steamed milk",
+      "description": "A balanced blend of espresso and warm milk.",
+      "extra": "Espresso, Steamed Milk",
       "picUrl": [
         "https://res.cloudinary.com/dkikc5ywq/image/upload/v1748598179/1_zgqdzu.png"
       ],
@@ -137,47 +181,157 @@
     },
     {
       "categoryId": "1",
-      "description": "A seasonal favorite, this comforting latte combines the richness of espresso with the creamy sweetness of pumpkin spice, milk, and a touch of cinnamon. Perfect for autumn or any cozy moment.",
-      "extra": "Espresso, steamed milk",
+      "description": "Chilled espresso with cold milk and a layer of foam over ice.",
+      "extra": "Espresso, Cold Milk, Ice",
       "picUrl": [
         "https://res.cloudinary.com/dkikc5ywq/image/upload/v1748601130/10_hurlfp.png"
       ],
-      "price": 5.9,
-      "rating": 4.9,
-      "title": "Latte Art"
+      "price": 4.8,
+      "rating": 4.7,
+      "title": "Iced Cappuccino"
     },
     {
-      "categoryId": "1",
-      "description": "A seasonal favorite, this comforting latte combines the richness of espresso with the creamy sweetness of pumpkin spice, milk, and a touch of cinnamon. Perfect for autumn or any cozy moment.",
-      "extra": "Espresso, steamed milk",
+      "categoryId": "2",
+      "description": "Rich espresso with steamed milk and sweet caramel syrup.",
+      "extra": "Espresso, Steamed Milk, Caramel",
+      "picUrl": [
+        "https://res.cloudinary.com/dkikc5ywq/image/upload/v1748601130/10_hurlfp.png"
+      ],
+      "price": 4.8,
+      "rating": 4.7,
+      "title": "Caramel Latte"
+    },
+    {
+      "categoryId": "2",
+      "description": "Espresso combined with creamy steamed milk and vanilla flavor.",
+      "extra": "Espresso, Steamed Milk, Vanilla",
       "picUrl": [
         "https://res.cloudinary.com/dkikc5ywq/image/upload/v1748601130/9_vgwjdj.png"
       ],
-      "price": 5.4,
-      "rating": 4.7,
-      "title": "Latte Art"
+      "price": 4.5,
+      "rating": 4.8,
+      "title": "Vanilla Latte"
     },
     {
-      "categoryId": "1",
-      "description": "A seasonal favorite, this comforting latte combines the richness of espresso with the creamy sweetness of pumpkin spice, milk, and a touch of cinnamon. Perfect for autumn or any cozy moment.",
-      "extra": "Espresso, steamed milk",
-      "picUrl": [
-        "https://res.cloudinary.com/dkikc5ywq/image/upload/v1748601121/8_czlhri.png"
-      ],
-      "price": 5.2,
-      "rating": 4.3,
-      "title": "Latte Art"
-    },
-    {
-      "categoryId": "1",
-      "description": "A seasonal favorite, this comforting latte combines the richness of espresso with the creamy sweetness of pumpkin spice, milk, and a touch of cinnamon. Perfect for autumn or any cozy moment.",
-      "extra": "Espresso, steamed milk",
+      "categoryId": "2",
+      "description": "Slightly sweeter than a traditional latte, made with espresso and sweetened condensed milk.",
+      "extra": "Espresso, Condensed Milk",
       "picUrl": [
         "https://res.cloudinary.com/dkikc5ywq/image/upload/v1748601128/13_nvrg2g.png"
       ],
-      "price": 5.7,
+      "price": 5.2,
+      "rating": 4.9,
+      "title": "Spanish Latte"
+    },
+    {
+      "categoryId": "2",
+      "description": "Smooth espresso paired with velvety steamed milk and rich hazelnut flavor.",
+      "extra": "Espresso, Steamed Milk, Hazelnut",
+      "picUrl": [
+        "https://res.cloudinary.com/dkikc5ywq/image/upload/v1748601121/8_czlhri.png"
+      ],
+      "price": 5.0,
+      "rating": 4.6,
+      "title": "Hazelnut Latte"
+    },
+    {
+      "categoryId": "2",
+      "description": "Indulgent combination of espresso, rich chocolate syrup, and warm milk.",
+      "extra": "Espresso, Chocolate, Milk",
+      "picUrl": [
+        "https://res.cloudinary.com/dkikc5ywq/image/upload/v1748601130/10_hurlfp.png"
+      ],
+      "price": 5.4,
       "rating": 4.8,
-      "title": "Latte Art"
+      "title": "Mocha Latte"
+    },
+    {
+      "categoryId": "3",
+      "description": "Espresso diluted with hot water for a smooth coffee flavor.",
+      "extra": "Espresso, Hot Water",
+      "picUrl": [
+        "https://res.cloudinary.com/dkikc5ywq/image/upload/v1748598188/6_syir34.png"
+      ],
+      "price": 3.8,
+      "rating": 4.5,
+      "title": "Caffe Americano"
+    },
+    {
+      "categoryId": "3",
+      "description": "Chilled espresso and cold water served over ice.",
+      "extra": "Espresso, Cold Water, Ice",
+      "picUrl": [
+        "https://res.cloudinary.com/dkikc5ywq/image/upload/v1748598188/6_syir34.png"
+      ],
+      "price": 4.0,
+      "rating": 4.6,
+      "title": "Iced Americano"
+    },
+    {
+      "categoryId": "3",
+      "description": "Double espresso poured over hot water for a fuller body.",
+      "extra": "Double Espresso, Hot Water",
+      "picUrl": [
+        "https://res.cloudinary.com/dkikc5ywq/image/upload/v1748598194/5_gdnijm.png"
+      ],
+      "price": 4.2,
+      "rating": 4.7,
+      "title": "Long Black"
+    },
+    {
+      "categoryId": "3",
+      "description": "Classic Americano infused with a touch of natural vanilla.",
+      "extra": "Espresso, Hot Water, Vanilla",
+      "picUrl": [
+        "https://res.cloudinary.com/dkikc5ywq/image/upload/v1748598188/6_syir34.png"
+      ],
+      "price": 4.5,
+      "rating": 4.6,
+      "title": "Vanilla Americano"
+    },
+    {
+      "categoryId": "4",
+      "description": "Rich chocolate blended with steamed milk and topped with foam.",
+      "extra": "Chocolate, Steamed Milk",
+      "picUrl": [
+        "https://res.cloudinary.com/dkikc5ywq/image/upload/v1748601121/8_czlhri.png"
+      ],
+      "price": 4.2,
+      "rating": 4.9,
+      "title": "Classic Hot Chocolate"
+    },
+    {
+      "categoryId": "4",
+      "description": "Creamy hot chocolate topped with fluffy marshmallows.",
+      "extra": "Chocolate, Steamed Milk, Marshmallows",
+      "picUrl": [
+        "https://res.cloudinary.com/dkikc5ywq/image/upload/v1748601128/13_nvrg2g.png"
+      ],
+      "price": 4.8,
+      "rating": 4.9,
+      "title": "Marshmallow Hot Chocolate"
+    },
+    {
+      "categoryId": "4",
+      "description": "Decadent dark chocolate melted into warm milk.",
+      "extra": "Dark Chocolate, Milk, Cocoa",
+      "picUrl": [
+        "https://res.cloudinary.com/dkikc5ywq/image/upload/v1748601121/8_czlhri.png"
+      ],
+      "price": 5.0,
+      "rating": 4.8,
+      "title": "Dark Chocolate Delight"
+    },
+    {
+      "categoryId": "4",
+      "description": "Sweet, creamy white chocolate melted into hot milk.",
+      "extra": "White Chocolate, Steamed Milk",
+      "picUrl": [
+        "https://res.cloudinary.com/dkikc5ywq/image/upload/v1748601128/13_nvrg2g.png"
+      ],
+      "price": 4.6,
+      "rating": 4.7,
+      "title": "White Hot Chocolate"
     }
   ]
 }

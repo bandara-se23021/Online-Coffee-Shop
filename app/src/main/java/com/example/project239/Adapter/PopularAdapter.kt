@@ -1,13 +1,16 @@
 package com.example.project239.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.project239.Activity.DetailActivity
 import com.example.project239.R
 import com.example.project239.databinding.ViewholderPopularBinding
 import com.example.project239.domain.ItemsModel
+import kotlin.jvm.java
 
 class PopularAdapter(val items: MutableList<ItemsModel>) :
     RecyclerView.Adapter<PopularAdapter.ViewHolder>() {
@@ -89,6 +92,9 @@ class PopularAdapter(val items: MutableList<ItemsModel>) :
         }
 
         holder.itemView.setOnClickListener {
+            val intent= Intent(context, DetailActivity::class.java)
+            intent.putExtra("object", items[position])
+            context.startActivity(intent)
         }
     }
 

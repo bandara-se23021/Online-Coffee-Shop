@@ -160,7 +160,7 @@ class MainRepository {
                     description = "Espresso is a concentrated form of coffee served in small, strong shots.",
                     picUrl = arrayListOf("https://res.cloudinary.com/dkikc5ywq/image/upload/v1748598194/5_gdnijm.png"),
                     price = 3.5,
-                    rating = 4.0,
+                    rating = 4.9,
                     numberInCart = 0,
                     extra = "Espresso",
                     categoryId = "0"
@@ -170,13 +170,53 @@ class MainRepository {
                     description = "A lighter espresso shot with a smoother finish.",
                     picUrl = arrayListOf("https://res.cloudinary.com/dkikc5ywq/image/upload/v1748598194/7_hpl7t1.png"),
                     price = 3.5,
-                    rating = 4.0,
+                    rating = 4.5,
                     numberInCart = 0,
                     extra = "Espresso",
+                    categoryId = "0"
+                ),
+                ItemsModel(
+                    title = "Double Espresso",
+                    description = "Double shot of rich concentrated espresso for an intense flavor boost.",
+                    picUrl = arrayListOf("https://res.cloudinary.com/dkikc5ywq/image/upload/v1748598194/5_gdnijm.png"),
+                    price = 4.2,
+                    rating = 4.8,
+                    numberInCart = 0,
+                    extra = "Double Espresso",
+                    categoryId = "0"
+                ),
+                ItemsModel(
+                    title = "Espresso Ristretto",
+                    description = "A short shot of espresso extracted with less water for a concentrated taste.",
+                    picUrl = arrayListOf("https://res.cloudinary.com/dkikc5ywq/image/upload/v1748598194/7_hpl7t1.png"),
+                    price = 3.8,
+                    rating = 4.7,
+                    numberInCart = 0,
+                    extra = "Short Espresso Shot",
+                    categoryId = "0"
+                ),
+                ItemsModel(
+                    title = "Affogato",
+                    description = "Italian coffee-based dessert consisting of hot espresso poured over gelato.",
+                    picUrl = arrayListOf("https://res.cloudinary.com/dkikc5ywq/image/upload/v1748598184/3_o0g3jz.png"),
+                    price = 8.0,
+                    rating = 4.7,
+                    numberInCart = 0,
+                    extra = "Espresso, Milk, Ice Cream",
                     categoryId = "0"
                 )
             )
             "1" -> mutableListOf(
+                ItemsModel(
+                    title = "Classic Cappuccino",
+                    description = "Equal parts double espresso, steamed milk, and milk foam on top.",
+                    picUrl = arrayListOf("https://res.cloudinary.com/dkikc5ywq/image/upload/v1748598189/4_vcxvtv.png"),
+                    price = 4.5,
+                    rating = 4.8,
+                    numberInCart = 0,
+                    extra = "Espresso, Steamed Milk, Foam",
+                    categoryId = "1"
+                ),
                 ItemsModel(
                     title = "Pumpkin Latte",
                     description = "A seasonal favorite with pumpkin spice and steamed milk.",
@@ -184,7 +224,7 @@ class MainRepository {
                     price = 5.5,
                     rating = 4.6,
                     numberInCart = 0,
-                    extra = "Espresso, steamed milk, pumpkin spice syrup",
+                    extra = "Espresso, Steamed Milk, Pumpkin Spice",
                     categoryId = "1"
                 ),
                 ItemsModel(
@@ -194,7 +234,7 @@ class MainRepository {
                     price = 3.5,
                     rating = 4.6,
                     numberInCart = 0,
-                    extra = "Espresso, milk foam",
+                    extra = "Espresso, Milk Foam",
                     categoryId = "1"
                 ),
                 ItemsModel(
@@ -204,7 +244,7 @@ class MainRepository {
                     price = 5.0,
                     rating = 4.6,
                     numberInCart = 0,
-                    extra = "Matcha powder, steamed milk",
+                    extra = "Matcha powder, Steamed Milk",
                     categoryId = "1"
                 ),
                 ItemsModel(
@@ -214,7 +254,17 @@ class MainRepository {
                     price = 3.75,
                     rating = 4.6,
                     numberInCart = 0,
-                    extra = "Espresso, steamed milk",
+                    extra = "Espresso, Steamed Milk",
+                    categoryId = "1"
+                ),
+                ItemsModel(
+                    title = "Iced Cappuccino",
+                    description = "Chilled espresso with cold milk and a layer of foam over ice.",
+                    picUrl = arrayListOf("https://res.cloudinary.com/dkikc5ywq/image/upload/v1748601130/10_hurlfp.png"),
+                    price = 4.8,
+                    rating = 4.7,
+                    numberInCart = 0,
+                    extra = "Espresso, Cold Milk, Ice",
                     categoryId = "1"
                 )
             )
@@ -226,7 +276,7 @@ class MainRepository {
                     price = 4.8,
                     rating = 4.7,
                     numberInCart = 0,
-                    extra = "Espresso, steamed milk, caramel syrup",
+                    extra = "Espresso, Steamed Milk, Caramel",
                     categoryId = "2"
                 ),
                 ItemsModel(
@@ -236,7 +286,37 @@ class MainRepository {
                     price = 4.5,
                     rating = 4.8,
                     numberInCart = 0,
-                    extra = "Espresso, steamed milk, vanilla",
+                    extra = "Espresso, Steamed Milk, Vanilla",
+                    categoryId = "2"
+                ),
+                ItemsModel(
+                    title = "Spanish Latte",
+                    description = "Slightly sweeter than a traditional latte, made with espresso and sweetened condensed milk.",
+                    picUrl = arrayListOf("https://res.cloudinary.com/dkikc5ywq/image/upload/v1748601128/13_nvrg2g.png"),
+                    price = 5.2,
+                    rating = 4.9,
+                    numberInCart = 0,
+                    extra = "Espresso, Condensed Milk",
+                    categoryId = "2"
+                ),
+                ItemsModel(
+                    title = "Hazelnut Latte",
+                    description = "Smooth espresso paired with velvety steamed milk and rich hazelnut flavor.",
+                    picUrl = arrayListOf("https://res.cloudinary.com/dkikc5ywq/image/upload/v1748601121/8_czlhri.png"),
+                    price = 5.0,
+                    rating = 4.6,
+                    numberInCart = 0,
+                    extra = "Espresso, Steamed Milk, Hazelnut",
+                    categoryId = "2"
+                ),
+                ItemsModel(
+                    title = "Mocha Latte",
+                    description = "Indulgent combination of espresso, rich chocolate syrup, and warm milk.",
+                    picUrl = arrayListOf("https://res.cloudinary.com/dkikc5ywq/image/upload/v1748601130/10_hurlfp.png"),
+                    price = 5.4,
+                    rating = 4.8,
+                    numberInCart = 0,
+                    extra = "Espresso, Chocolate, Milk",
                     categoryId = "2"
                 )
             )
@@ -248,7 +328,7 @@ class MainRepository {
                     price = 3.8,
                     rating = 4.5,
                     numberInCart = 0,
-                    extra = "Espresso, hot water",
+                    extra = "Espresso, Hot Water",
                     categoryId = "3"
                 ),
                 ItemsModel(
@@ -258,7 +338,27 @@ class MainRepository {
                     price = 4.0,
                     rating = 4.6,
                     numberInCart = 0,
-                    extra = "Espresso, cold water, ice",
+                    extra = "Espresso, Cold Water, Ice",
+                    categoryId = "3"
+                ),
+                ItemsModel(
+                    title = "Long Black",
+                    description = "Double espresso poured over hot water for a fuller body.",
+                    picUrl = arrayListOf("https://res.cloudinary.com/dkikc5ywq/image/upload/v1748598194/5_gdnijm.png"),
+                    price = 4.2,
+                    rating = 4.7,
+                    numberInCart = 0,
+                    extra = "Double Espresso, Hot Water",
+                    categoryId = "3"
+                ),
+                ItemsModel(
+                    title = "Vanilla Americano",
+                    description = "Classic Americano infused with a touch of natural vanilla.",
+                    picUrl = arrayListOf("https://res.cloudinary.com/dkikc5ywq/image/upload/v1748598188/6_syir34.png"),
+                    price = 4.5,
+                    rating = 4.6,
+                    numberInCart = 0,
+                    extra = "Espresso, Hot Water, Vanilla",
                     categoryId = "3"
                 )
             )
@@ -270,7 +370,7 @@ class MainRepository {
                     price = 4.2,
                     rating = 4.9,
                     numberInCart = 0,
-                    extra = "Chocolate, steamed milk",
+                    extra = "Chocolate, Steamed Milk",
                     categoryId = "4"
                 ),
                 ItemsModel(
@@ -280,7 +380,27 @@ class MainRepository {
                     price = 4.8,
                     rating = 4.9,
                     numberInCart = 0,
-                    extra = "Chocolate, steamed milk, marshmallows",
+                    extra = "Chocolate, Steamed Milk, Marshmallows",
+                    categoryId = "4"
+                ),
+                ItemsModel(
+                    title = "Dark Chocolate Delight",
+                    description = "Decadent dark chocolate melted into warm milk.",
+                    picUrl = arrayListOf("https://res.cloudinary.com/dkikc5ywq/image/upload/v1748601121/8_czlhri.png"),
+                    price = 5.0,
+                    rating = 4.8,
+                    numberInCart = 0,
+                    extra = "Dark Chocolate, Milk, Cocoa",
+                    categoryId = "4"
+                ),
+                ItemsModel(
+                    title = "White Hot Chocolate",
+                    description = "Sweet, creamy white chocolate melted into hot milk.",
+                    picUrl = arrayListOf("https://res.cloudinary.com/dkikc5ywq/image/upload/v1748601128/13_nvrg2g.png"),
+                    price = 4.6,
+                    rating = 4.7,
+                    numberInCart = 0,
+                    extra = "White Chocolate, Steamed Milk",
                     categoryId = "4"
                 )
             )

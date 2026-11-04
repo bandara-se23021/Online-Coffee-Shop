@@ -15,4 +15,9 @@
     <string name="explorer">Explorer</string>
     <string name="title">title</string>
     <string name="subtitle">subtitle</string>
+    <string name="back">Back</string>
+    <string name="coffe_size">Coffe Size</string>
+    <string name="small">Small</string>
+    <string name="medium">Medium</string>
+    <string name="large">Large</string>
 </resources>

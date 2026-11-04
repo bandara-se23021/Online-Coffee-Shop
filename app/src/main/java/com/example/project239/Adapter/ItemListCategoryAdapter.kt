@@ -1,10 +1,12 @@
 package com.example.project239.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.project239.Activity.DetailActivity
 import com.example.project239.R
 import com.example.project239.databinding.ViewholderItemListBinding
 import com.example.project239.domain.ItemsModel
@@ -89,6 +91,9 @@ class ItemListCategoryAdapter(val items: MutableList<ItemsModel>) :
         }
 
         holder.itemView.setOnClickListener {
+            val intent= Intent(context, DetailActivity::class.java)
+            intent.putExtra("object", items[position])
+            context.startActivity(intent)
         }
     }
 
