@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.project239.Activity.DetailActivity
+import com.example.project239.activity.DetailActivity
 import com.example.project239.R
 import com.example.project239.databinding.ViewholderPopularBinding
 import com.example.project239.domain.ItemsModel

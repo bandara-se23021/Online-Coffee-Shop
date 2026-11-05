@@ -1,4 +1,4 @@
-package com.example.project239.Activity
+package com.example.project239.activity
 
 import com.example.project239.R
 import android.os.Bundle
