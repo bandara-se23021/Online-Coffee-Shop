@@ -10,8 +10,11 @@ import com.bumptech.glide.Glide
 import com.example.project239.Helper.ManagmentCart
 import com.example.project239.databinding.ActivityDetailBinding
 import com.example.project239.domain.ItemsModel
+import com.example.project239.Helper.ManagmentWishlist
 
 class DetailActivity : AppCompatActivity() {
+    private lateinit var wishlistManager: ManagmentWishlist
+
     lateinit var  binding: ActivityDetailBinding
     private lateinit var item: ItemsModel
     private lateinit var managementCart: ManagmentCart
@@ -22,7 +25,8 @@ class DetailActivity : AppCompatActivity() {
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-       managementCart = ManagmentCart(this)
+        managementCart = ManagmentCart(this)
+        wishlistManager = ManagmentWishlist(this)
 
         bundle()
         initSizeList()
@@ -115,6 +119,9 @@ class DetailActivity : AppCompatActivity() {
 
             addToCartBtn.setOnClickListener {
                 managementCart.insertItems(item)
+            }
+            favBtn.setOnClickListener {
+                wishlistManager.insertItem(item)
             }
 
             backBtn.setOnClickListener {

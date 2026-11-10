@@ -27,7 +27,14 @@ class ManagmentCart(val context: Context) {
     }
 
     fun getListCart(): ArrayList<ItemsModel> {
-        return tinyDB.getListObject("CartList") ?: arrayListOf()
+        val rawList = tinyDB.getListObject("CartList") ?: arrayListOf()
+        val cleanList = ArrayList<ItemsModel>()
+        for (item in rawList) {
+            if (item != null) {
+                cleanList.add(item)
+            }
+        }
+        return cleanList
     }
 
     fun minusItem(listItems: ArrayList<ItemsModel>, position: Int, listener: ChangeNumberItemsListener) {

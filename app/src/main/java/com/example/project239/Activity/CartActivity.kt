@@ -51,7 +51,8 @@ class CartActivity : AppCompatActivity() {
 
     private fun calculateCart() {
         val percentTax = 0.02
-        val delivery = 15.0
+        val isCartEmpty = managementCart.getListCart().isEmpty()
+        val delivery = if (isCartEmpty) 0.0 else 15.0
         val totalFee = managementCart.getTotalFee()
 
         tax = Math.round(totalFee * percentTax * 100.0) / 100.0

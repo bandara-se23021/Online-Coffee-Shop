@@ -1,10 +1,12 @@
 package com.example.project239.activity
 
 import android.content.Intent
+import android.graphics.Typeface
 import android.os.Bundle
 import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -30,9 +32,73 @@ class MainActivity : AppCompatActivity() {
         initBottomMenu()
     }
 
+    override fun onResume() {
+        super.onResume()
+        selectBottomMenu("explorer")
+    }
+
     private fun initBottomMenu() {
+        binding.explorerBtn.setOnClickListener {
+            selectBottomMenu("explorer")
+        }
+
         binding.cartBtn.setOnClickListener {
+            selectBottomMenu("cart")
             startActivity(Intent(this, CartActivity::class.java))
+        }
+
+        binding.wishlistBtn.setOnClickListener {
+            selectBottomMenu("wishlist")
+            startActivity(Intent(this, WishlistActivity::class.java))
+        }
+
+        binding.myOrderBtn.setOnClickListener {
+            selectBottomMenu("order")
+        }
+
+        binding.profileBtn.setOnClickListener {
+            selectBottomMenu("profile")
+        }
+    }
+
+    private fun selectBottomMenu(selected: String) {
+        val menuItems = listOf(
+            binding.explorerTxt,
+            binding.cartTxt,
+            binding.wishlistTxt,
+            binding.myOrderTxt,
+            binding.profileTxt
+        )
+
+        val unselectedColor = ContextCompat.getColor(this, R.color.darkBrown)
+        val selectedColor = ContextCompat.getColor(this, R.color.orange)
+
+        menuItems.forEach {
+            it.setTypeface(null, Typeface.NORMAL)
+            it.setTextColor(unselectedColor)
+        }
+
+        when (selected) {
+            "explorer" -> {
+                binding.explorerTxt.setTypeface(null, Typeface.BOLD)
+                binding.explorerTxt.setTextColor(selectedColor)
+            }
+            "cart" -> {
+                binding.cartTxt.setTypeface(null, Typeface.BOLD)
+                binding.cartTxt.setTextColor(selectedColor)
+            }
+            "wishlist" -> {
+                binding.wishlistTxt.setTypeface(null, Typeface.BOLD)
+                binding.wishlistTxt.setTextColor(selectedColor)
+            }
+            "order" -> {
+                binding.myOrderTxt.setTypeface(null, Typeface.BOLD)
+                binding.myOrderTxt.setTextColor(selectedColor)
+            }
+            "profile" -> {
+                binding.profileTxt.setTypeface(null, Typeface.BOLD)
+                binding.profileTxt.setTextColor(selectedColor)
+            }
         }
     }
 
