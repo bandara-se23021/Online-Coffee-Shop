@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="8dp"
+    android:background="@drawable/white_full_corner_bg"
+    android:elevation="3dp"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Order ID -->
+    <TextView
+        android:id="@+id/orderIdTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Order #12345"
+        android:textColor="@color/darkBrown"
+        android:textSize="18sp"
+        android:textStyle="bold"/>
+
+    <!-- Order Date -->
+    <TextView
+        android:id="@+id/dateTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Order Date"
+        android:textColor="@color/darkBrown"
+        android:textSize="13sp"/>
+
+    <!-- All Coffee Items -->
+    <LinearLayout
+        android:id="@+id/itemsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:orientation="vertical"/>
+
+    <!-- Divider -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="12dp"
+        android:background="#E8E2DC"/>
+
+    <!-- Total -->
+    <TextView
+        android:id="@+id/totalTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Total: $0.00"
+        android:textColor="@color/darkBrown"
+        android:textSize="18sp"
+        android:textStyle="bold"/>
+
+    <!-- Order Status -->
+    <TextView
+        android:id="@+id/statusTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/brown_full_corner_bg"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp"
+        android:text="Pending"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        android:textStyle="bold"/>
+
+</LinearLayout>

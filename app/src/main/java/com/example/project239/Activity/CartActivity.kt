@@ -1,6 +1,11 @@
 package com.example.project239.activity
 
 import android.os.Bundle
+import android.content.Intent
+import android.widget.Toast
+import com.example.project239.Helper.ManagmentOrders
+import com.example.project239.domain.OrderModel
+import java.util.UUID
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -25,6 +30,9 @@ class CartActivity : AppCompatActivity() {
         setVariable()
         initCartList()
         calculateCart()
+        binding.button.setOnClickListener {
+            placeOrder()
+        }
     }
 
     private fun initCartList() {
@@ -66,4 +74,59 @@ class CartActivity : AppCompatActivity() {
             totalTxt.text = "$$total"
         }
     }
+
+
+    private fun placeOrder() {
+
+        val cartItems = managementCart.getListCart()
+
+        if (cartItems.isEmpty()) {
+            Toast.makeText(
+                this,
+                "Your Cart is Empty",
+                Toast.LENGTH_SHORT
+            ).show()
+            return
+        }
+
+        val subtotal = managementCart.getTotalFee()
+        val orderTax = Math.round(subtotal * 0.02 * 100.0) / 100.0
+        val delivery = 15.0
+        val total = Math.round(
+            (subtotal + orderTax + delivery) * 100.0
+        ) / 100.0
+
+        val order = OrderModel(
+            orderId = UUID.randomUUID()
+                .toString()
+                .take(8)
+                .uppercase(),
+            orderDate = System.currentTimeMillis(),
+            items = ArrayList(cartItems),
+            totalPrice = total,
+            status = "Pending"
+        )
+
+        val ordersManager = ManagmentOrders(this)
+        ordersManager.saveOrder(order)
+
+        // Clear Cart after saving order
+        managementCart.clearCart()
+
+        // Open My Orders
+        Toast.makeText(
+            this,
+            "Order Placed Successfully",
+            Toast.LENGTH_SHORT
+        ).show()
+
+        val intent = Intent(
+            this,
+            MyOrdersActivity::class.java
+        )
+
+        startActivity(intent)
+        finish()
+    }
+
 }

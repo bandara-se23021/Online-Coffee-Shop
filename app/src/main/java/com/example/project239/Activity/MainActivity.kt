@@ -53,7 +53,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.myOrderBtn.setOnClickListener {
-            selectBottomMenu("order")
+            startActivity(
+                Intent(this, MyOrdersActivity::class.java)
+            )
         }
 
         binding.profileBtn.setOnClickListener {
