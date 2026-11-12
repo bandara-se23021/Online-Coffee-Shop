@@ -1,18 +1,19 @@
 package com.example.project239.activity
 
-import android.os.Bundle
 import android.content.Intent
+import android.os.Bundle
 import android.widget.Toast
-import com.example.project239.Helper.ManagmentOrders
-import com.example.project239.domain.OrderModel
-import java.util.UUID
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.project239.Helper.ChangeNumberItemsListener
 import com.example.project239.Helper.ManagmentCart
+import com.example.project239.Helper.ManagmentOrders
+import com.example.project239.Helper.setupBottomNavigation
 import com.example.project239.adapter.CartAdapter
 import com.example.project239.databinding.ActivityCartBinding
+import com.example.project239.domain.OrderModel
+import java.util.UUID
 
 class CartActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCartBinding
@@ -30,9 +31,17 @@ class CartActivity : AppCompatActivity() {
         setVariable()
         initCartList()
         calculateCart()
+
+        setupBottomNavigation(this, binding.bottomMenu, "cart")
+
         binding.button.setOnClickListener {
             placeOrder()
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        setupBottomNavigation(this, binding.bottomMenu, "cart")
     }
 
     private fun initCartList() {
@@ -75,9 +84,7 @@ class CartActivity : AppCompatActivity() {
         }
     }
 
-
     private fun placeOrder() {
-
         val cartItems = managementCart.getListCart()
 
         if (cartItems.isEmpty()) {
@@ -110,10 +117,8 @@ class CartActivity : AppCompatActivity() {
         val ordersManager = ManagmentOrders(this)
         ordersManager.saveOrder(order)
 
-        // Clear Cart after saving order
         managementCart.clearCart()
 
-        // Open My Orders
         Toast.makeText(
             this,
             "Order Placed Successfully",
@@ -128,5 +133,4 @@ class CartActivity : AppCompatActivity() {
         startActivity(intent)
         finish()
     }
-
 }

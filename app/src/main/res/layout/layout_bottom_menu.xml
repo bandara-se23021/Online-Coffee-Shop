@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottomMenuContainer"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:layout_gravity="bottom"
+    android:background="@color/white"
+    android:elevation="8dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingTop="6dp"
+    android:paddingBottom="6dp">
+
+    <!-- Explorer -->
+    <LinearLayout
+        android:id="@+id/explorerBtn"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            app:srcCompat="@drawable/btn_1" />
+
+        <TextView
+            android:id="@+id/explorerTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="@string/explorer"
+            android:textColor="@color/darkBrown"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <!-- Cart -->
+    <LinearLayout
+        android:id="@+id/cartBtn"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            app:srcCompat="@drawable/btn_2" />
+
+        <TextView
+            android:id="@+id/cartTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="@string/cart"
+            android:textColor="@color/darkBrown"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <!-- Wishlist -->
+    <LinearLayout
+        android:id="@+id/wishlistBtn"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            app:srcCompat="@drawable/btn_3" />
+
+        <TextView
+            android:id="@+id/wishlistTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="@string/wishlist"
+            android:textColor="@color/darkBrown"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <!-- My Order -->
+    <LinearLayout
+        android:id="@+id/myOrderBtn"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            app:srcCompat="@drawable/btn_4" />
+
+        <TextView
+            android:id="@+id/myOrderTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="@string/my_order"
+            android:textColor="@color/darkBrown"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <!-- Profile -->
+    <LinearLayout
+        android:id="@+id/profileBtn"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            app:srcCompat="@drawable/btn_5" />
+
+        <TextView
+            android:id="@+id/profileTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="@string/profile"
+            android:textColor="@color/darkBrown"
+            android:textSize="13sp" />
+    </LinearLayout>
+</LinearLayout>

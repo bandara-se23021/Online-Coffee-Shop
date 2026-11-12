@@ -1,15 +1,13 @@
 package com.example.project239.activity
 
-import android.content.Intent
-import android.graphics.Typeface
 import android.os.Bundle
 import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.project239.Helper.setupBottomNavigation
 import com.example.project239.R
 import com.example.project239.adapter.CategoryAdapter
 import com.example.project239.adapter.PopularAdapter
@@ -29,77 +27,27 @@ class MainActivity : AppCompatActivity() {
         initBanner()
         initCategory()
         initPopular()
-        initBottomMenu()
+        setupBottomNavigation(this, binding.bottomMenu, "explorer")
     }
 
     override fun onResume() {
         super.onResume()
-        selectBottomMenu("explorer")
+        setupBottomNavigation(this, binding.bottomMenu, "explorer")
+        loadProfileData()
     }
 
-    private fun initBottomMenu() {
-        binding.explorerBtn.setOnClickListener {
-            selectBottomMenu("explorer")
-        }
+    private fun loadProfileData() {
+        val prefs = getSharedPreferences("CoffeeShopProfile", MODE_PRIVATE)
+        val name = prefs.getString("name", "Coffee Lover") ?: "Coffee Lover"
+        val imageUriString = prefs.getString("profile_image", null)
 
-        binding.cartBtn.setOnClickListener {
-            selectBottomMenu("cart")
-            startActivity(Intent(this, CartActivity::class.java))
-        }
+        binding.textView2.text = name.ifEmpty { "Coffee Lover" }
 
-        binding.wishlistBtn.setOnClickListener {
-            selectBottomMenu("wishlist")
-            startActivity(Intent(this, WishlistActivity::class.java))
-        }
-
-        binding.myOrderBtn.setOnClickListener {
-            startActivity(
-                Intent(this, MyOrdersActivity::class.java)
-            )
-        }
-
-        binding.profileBtn.setOnClickListener {
-            selectBottomMenu("profile")
-        }
-    }
-
-    private fun selectBottomMenu(selected: String) {
-        val menuItems = listOf(
-            binding.explorerTxt,
-            binding.cartTxt,
-            binding.wishlistTxt,
-            binding.myOrderTxt,
-            binding.profileTxt
-        )
-
-        val unselectedColor = ContextCompat.getColor(this, R.color.darkBrown)
-        val selectedColor = ContextCompat.getColor(this, R.color.orange)
-
-        menuItems.forEach {
-            it.setTypeface(null, Typeface.NORMAL)
-            it.setTextColor(unselectedColor)
-        }
-
-        when (selected) {
-            "explorer" -> {
-                binding.explorerTxt.setTypeface(null, Typeface.BOLD)
-                binding.explorerTxt.setTextColor(selectedColor)
-            }
-            "cart" -> {
-                binding.cartTxt.setTypeface(null, Typeface.BOLD)
-                binding.cartTxt.setTextColor(selectedColor)
-            }
-            "wishlist" -> {
-                binding.wishlistTxt.setTypeface(null, Typeface.BOLD)
-                binding.wishlistTxt.setTextColor(selectedColor)
-            }
-            "order" -> {
-                binding.myOrderTxt.setTypeface(null, Typeface.BOLD)
-                binding.myOrderTxt.setTextColor(selectedColor)
-            }
-            "profile" -> {
-                binding.profileTxt.setTypeface(null, Typeface.BOLD)
-                binding.profileTxt.setTextColor(selectedColor)
+        if (imageUriString != null) {
+            try {
+                binding.imageView2.setImageURI(android.net.Uri.parse(imageUriString))
+            } catch (e: Exception) {
+                e.printStackTrace()
             }
         }
     }

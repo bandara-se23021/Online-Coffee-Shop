@@ -41,4 +41,19 @@ class ManagmentOrders(context: Context) {
             .putString("OrdersList", gson.toJson(orders))
             .apply()
     }
+
+
+    fun deleteOrder(orderId: String) {
+
+        val orders = getOrders()
+
+        orders.removeAll {
+            it.orderId == orderId
+        }
+
+        prefs.edit()
+            .putString("OrdersList", gson.toJson(orders))
+            .apply()
+    }
+
 }

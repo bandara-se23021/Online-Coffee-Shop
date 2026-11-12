@@ -56,18 +56,41 @@
         android:textSize="18sp"
         android:textStyle="bold"/>
 
-    <!-- Order Status -->
-    <TextView
-        android:id="@+id/statusTxt"
-        android:layout_width="wrap_content"
+    <!-- Bottom Actions Container -->
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:background="@drawable/brown_full_corner_bg"
-        android:paddingHorizontal="16dp"
-        android:paddingVertical="8dp"
-        android:text="Pending"
-        android:textColor="@color/white"
-        android:textSize="13sp"
-        android:textStyle="bold"/>
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- Order Status -->
+        <TextView
+            android:id="@+id/statusTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/brown_full_corner_bg"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp"
+            android:text="Pending"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            android:textStyle="bold"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/deleteBtn"
+            android:layout_width="90dp"
+            android:layout_height="45dp"
+            android:text="Delete"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:backgroundTint="#B3261E" />
+
+    </LinearLayout>
 
 </LinearLayout>

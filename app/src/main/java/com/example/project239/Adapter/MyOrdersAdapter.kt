@@ -12,11 +12,17 @@ import com.example.project239.domain.OrderModel
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
+import android.app.AlertDialog
+import android.widget.Toast
+import com.example.project239.Helper.ManagmentOrders
 
 class MyOrdersAdapter(
-    private val orders: ArrayList<OrderModel>
+    private val orders: ArrayList<OrderModel>,
+    private val onOrdersChanged: () -> Unit
 ) : RecyclerView.Adapter<MyOrdersAdapter.ViewHolder>() {
 
+
+    private lateinit var ordersManager: ManagmentOrders
     class ViewHolder(
         val binding: ViewholderMyOrderBinding
     ) : RecyclerView.ViewHolder(binding.root)
@@ -43,11 +49,11 @@ class MyOrdersAdapter(
         val order = orders[position]
         val context = holder.itemView.context
 
-        // Order ID
+
         holder.binding.orderIdTxt.text =
             "Order #${order.orderId}"
 
-        // Order Date
+
         val formatter = SimpleDateFormat(
             "dd MMM yyyy, hh:mm a",
             Locale.getDefault()
@@ -56,10 +62,10 @@ class MyOrdersAdapter(
         holder.binding.dateTxt.text =
             formatter.format(Date(order.orderDate))
 
-        // Clear old items (RecyclerView recycling)
+
         holder.binding.itemsContainer.removeAllViews()
 
-        // Add each coffee item separately
+
         for (item in order.items) {
 
             val itemBinding = ViewholderOrderItemBinding.inflate(
@@ -68,17 +74,17 @@ class MyOrdersAdapter(
                 false
             )
 
-            // Coffee name and quantity
+
             itemBinding.itemNameTxt.text =
                 "${item.title} x ${item.numberInCart}"
 
-            // Item subtotal
+
             val itemTotal = item.price * item.numberInCart
 
             itemBinding.itemPriceTxt.text =
                 "$%.2f".format(Locale.US, itemTotal)
 
-            // Coffee image
+
             val imagePath = item.picUrl.firstOrNull()
 
             if (!imagePath.isNullOrEmpty()) {
@@ -128,22 +134,63 @@ class MyOrdersAdapter(
                 )
             }
 
-            // Add item row to white order card
+
             holder.binding.itemsContainer.addView(
                 itemBinding.root
             )
         }
 
-        // Order Total
+
         holder.binding.totalTxt.text =
             "Total: $%.2f".format(
                 Locale.US,
                 order.totalPrice
             )
 
-        // Order Status
+
         holder.binding.statusTxt.text =
             order.status
+
+
+        holder.binding.deleteBtn.setOnClickListener {
+
+            AlertDialog.Builder(context)
+                .setTitle("Delete Order")
+                .setMessage(
+                    "Are you sure you want to delete this order from history?"
+                )
+                .setPositiveButton("Delete") { _, _ ->
+
+                    ordersManager = ManagmentOrders(context)
+
+                    // Delete from local storage
+                    ordersManager.deleteOrder(order.orderId)
+
+                    // Find correct position
+                    val currentPosition =
+                        orders.indexOfFirst {
+                            it.orderId == order.orderId
+                        }
+
+                    if (currentPosition != -1) {
+
+                        orders.removeAt(currentPosition)
+
+                        notifyItemRemoved(currentPosition)
+
+                        onOrdersChanged()
+                    }
+
+                    Toast.makeText(
+                        context,
+                        "Order Deleted Successfully",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+                .setNegativeButton("Cancel", null)
+                .show()
+        }
+
     }
 
     override fun getItemCount(): Int = orders.size
