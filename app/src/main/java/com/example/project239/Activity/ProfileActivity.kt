@@ -8,11 +8,13 @@ import android.util.Patterns
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import com.example.project239.Helper.setupBottomNavigation
 import com.example.project239.databinding.ActivityProfileBinding
 
 class ProfileActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityProfileBinding
+    private var isEditing = false
 
     private val prefs by lazy {
         getSharedPreferences(
@@ -38,6 +40,9 @@ class ProfileActivity : AppCompatActivity() {
         loadProfile()
 
         binding.backBtn.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
+            startActivity(intent)
             finish()
         }
 
@@ -48,6 +53,13 @@ class ProfileActivity : AppCompatActivity() {
         binding.profileImage.setOnClickListener {
             pickImageLauncher.launch(arrayOf("image/*"))
         }
+
+        setupBottomNavigation(this, binding.bottomMenu, "profile")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        setupBottomNavigation(this, binding.bottomMenu, "profile")
     }
 
     private fun loadProfile() {
@@ -72,9 +84,31 @@ class ProfileActivity : AppCompatActivity() {
         binding.addressInput.setText(address)
 
         updateHeader(name, email)
+        
+        toggleEditMode(name.isEmpty())
+    }
+
+    private fun toggleEditMode(enable: Boolean) {
+        isEditing = enable
+
+        binding.nameInput.isEnabled = enable
+        binding.emailInput.isEnabled = enable
+        binding.phoneInput.isEnabled = enable
+        binding.addressInput.isEnabled = enable
+        binding.profileImage.isClickable = enable
+
+        if (enable) {
+            binding.saveBtn.text = "Save Profile"
+        } else {
+            binding.saveBtn.text = "Edit Profile"
+        }
     }
 
     private fun saveProfile() {
+        if (!isEditing) {
+            toggleEditMode(true)
+            return
+        }
 
         val name = binding.nameInput.text.toString().trim()
         val email = binding.emailInput.text.toString().trim()
@@ -103,6 +137,7 @@ class ProfileActivity : AppCompatActivity() {
             .apply()
 
         updateHeader(name, email)
+        toggleEditMode(false)
 
         Toast.makeText(
             this,
